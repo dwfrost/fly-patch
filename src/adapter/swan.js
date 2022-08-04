@@ -1,4 +1,4 @@
-//微信小程序适配器
+//百度小程序适配器
 module.exports = function (request, responseCallback) {
     let con = {
         method: request.method,
@@ -22,5 +22,5 @@ module.exports = function (request, responseCallback) {
             })
         }
     }
-    wx.request(con)
+    swan.request(con)
 }

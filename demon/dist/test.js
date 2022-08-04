@@ -63,7 +63,89 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,589 +153,473 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
-var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-(function webpackUniversalModuleDefinition(root, factory) {
-    if (( false ? 'undefined' : _typeof2(exports)) === 'object' && ( false ? 'undefined' : _typeof2(module)) === 'object') module.exports = factory();else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else {
-        var a = factory();
-        for (var i in a) {
-            ((typeof exports === 'undefined' ? 'undefined' : _typeof2(exports)) === 'object' ? exports : root)[i] = a[i];
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = {
+    type: function type(ob) {
+        return Object.prototype.toString.call(ob).slice(8, -1).toLowerCase();
+    },
+    isObject: function isObject(ob, real) {
+        if (real) {
+            return this.type(ob) === "object";
+        } else {
+            return ob && (typeof ob === 'undefined' ? 'undefined' : _typeof(ob)) === 'object';
         }
-    }
-})(undefined, function () {
-    return (/******/function (modules) {
-            // webpackBootstrap
-            /******/ // The module cache
-            /******/var installedModules = {};
-            /******/
-            /******/ // The require function
-            /******/function __webpack_require__(moduleId) {
-                /******/
-                /******/ // Check if module is in cache
-                /******/if (installedModules[moduleId]) {
-                    /******/return installedModules[moduleId].exports;
-                    /******/
-                }
-                /******/ // Create a new module (and put it into the cache)
-                /******/var module = installedModules[moduleId] = {
-                    /******/i: moduleId,
-                    /******/l: false,
-                    /******/exports: {}
-                    /******/ };
-                /******/
-                /******/ // Execute the module function
-                /******/modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-                /******/
-                /******/ // Flag the module as loaded
-                /******/module.l = true;
-                /******/
-                /******/ // Return the exports of the module
-                /******/return module.exports;
-                /******/
-            }
-            /******/
-            /******/
-            /******/ // expose the modules object (__webpack_modules__)
-            /******/__webpack_require__.m = modules;
-            /******/
-            /******/ // expose the module cache
-            /******/__webpack_require__.c = installedModules;
-            /******/
-            /******/ // identity function for calling harmony imports with the correct context
-            /******/__webpack_require__.i = function (value) {
-                return value;
-            };
-            /******/
-            /******/ // define getter function for harmony exports
-            /******/__webpack_require__.d = function (exports, name, getter) {
-                /******/if (!__webpack_require__.o(exports, name)) {
-                    /******/Object.defineProperty(exports, name, {
-                        /******/configurable: false,
-                        /******/enumerable: true,
-                        /******/get: getter
-                        /******/ });
-                    /******/
-                }
-                /******/
-            };
-            /******/
-            /******/ // getDefaultExport function for compatibility with non-harmony modules
-            /******/__webpack_require__.n = function (module) {
-                /******/var getter = module && module.__esModule ?
-                /******/function getDefault() {
-                    return module['default'];
-                } :
-                /******/function getModuleExports() {
-                    return module;
-                };
-                /******/__webpack_require__.d(getter, 'a', getter);
-                /******/return getter;
-                /******/
-            };
-            /******/
-            /******/ // Object.prototype.hasOwnProperty.call
-            /******/__webpack_require__.o = function (object, property) {
-                return Object.prototype.hasOwnProperty.call(object, property);
-            };
-            /******/
-            /******/ // __webpack_public_path__
-            /******/__webpack_require__.p = "";
-            /******/
-            /******/ // Load entry module and return exports
-            /******/
-            return __webpack_require__(__webpack_require__.s = 2);
-            /******/
-        }(
-        /************************************************************************/
-        /******/[
-        /* 0 */
-        /***/function (module, exports, __webpack_require__) {
+    },
+    isFormData: function isFormData(val) {
+        return typeof FormData !== 'undefined' && val instanceof FormData;
+    },
+    trim: function trim(str) {
+        return str.replace(/(^\s*)|(\s*$)/g, '');
+    },
+    encode: function encode(val) {
+        return encodeURIComponent(val).replace(/%40/gi, '@').replace(/%3A/gi, ':').replace(/%24/g, '$').replace(/%2C/gi, ',').replace(/%20/g, '+').replace(/%5B/gi, '[').replace(/%5D/gi, ']');
+    },
+    formatParams: function formatParams(data) {
+        var str = "";
+        var first = true;
+        var that = this;
+        if (!this.isObject(data)) {
+            return data;
+        }
 
-            "use strict";
-
-            var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-                return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-            } : function (obj) {
-                return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-            };
-
-            module.exports = {
-                type: function type(ob) {
-                    return Object.prototype.toString.call(ob).slice(8, -1).toLowerCase();
-                },
-                isObject: function isObject(ob, real) {
-                    if (real) {
-                        return this.type(ob) === "object";
+        function _encode(sub, path) {
+            var encode = that.encode;
+            var type = that.type(sub);
+            if (type == "array") {
+                sub.forEach(function (e, i) {
+                    if (!that.isObject(e)) i = "";
+                    _encode(e, path + ('%5B' + i + '%5D'));
+                });
+            } else if (type == "object") {
+                for (var key in sub) {
+                    if (path) {
+                        _encode(sub[key], path + "%5B" + encode(key) + "%5D");
                     } else {
-                        return ob && (typeof ob === 'undefined' ? 'undefined' : _typeof(ob)) === 'object';
+                        _encode(sub[key], encode(key));
                     }
-                },
-                isFormData: function isFormData(val) {
-                    return typeof FormData !== 'undefined' && val instanceof FormData;
-                },
-                trim: function trim(str) {
-                    return str.replace(/(^\s*)|(\s*$)/g, '');
-                },
-                encode: function encode(val) {
-                    return encodeURIComponent(val).replace(/%40/gi, '@').replace(/%3A/gi, ':').replace(/%24/g, '$').replace(/%2C/gi, ',').replace(/%20/g, '+').replace(/%5B/gi, '[').replace(/%5D/gi, ']');
-                },
-                formatParams: function formatParams(data) {
-                    var arr = [];
-                    for (var name in data) {
-                        var value = data[name];
-                        if (this.isObject(value)) {
-                            value = JSON.stringify(value);
-                        }
-                        arr.push(this.encode(name) + "=" + this.encode(value));
-                    }
-                    return arr.join("&");
-                },
-
-                // Do not overwrite existing attributes
-                merge: function merge(a, b) {
-                    for (var key in b) {
-                        if (!a.hasOwnProperty(key)) {
-                            a[key] = b[key];
-                        } else if (this.isObject(b[key], 1) && this.isObject(a[key], 1)) {
-                            this.merge(a[key], b[key]);
-                        }
-                    }
-                    return a;
                 }
-            };
-
-            /***/
-                }, ,
-        /* 1 */
-        /* 2 */
-        /***/function (module, exports, __webpack_require__) {
-
-            function KEEP(_, cb) {
-                cb();
+            } else {
+                if (!first) {
+                    str += "&";
+                }
+                first = false;
+                str += path + "=" + encode(sub);
             }
-            "use strict";
+        }
 
-            var _createClass = function () {
-                function defineProperties(target, props) {
-                    for (var i = 0; i < props.length; i++) {
-                        var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-                    }
-                }return function (Constructor, protoProps, staticProps) {
-                    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-                };
-            }();
+        _encode(data, "");
+        return str;
+    },
 
-            function _classCallCheck(instance, Constructor) {
-                if (!(instance instanceof Constructor)) {
-                    throw new TypeError("Cannot call a class as a function");
-                }
+    // Do not overwrite existing attributes
+    merge: function merge(a, b) {
+        for (var key in b) {
+            if (!a.hasOwnProperty(key)) {
+                a[key] = b[key];
+            } else if (this.isObject(b[key], 1) && this.isObject(a[key], 1)) {
+                this.merge(a[key], b[key]);
             }
-
-            var utils = __webpack_require__(0);
-            var isBrowser = typeof document !== "undefined";
-
-            var Fly = function () {
-                function Fly(engine) {
-                    _classCallCheck(this, Fly);
-
-                    this.engine = engine || XMLHttpRequest;
-                    var fly = this.default = this; //For typeScript
-                    /**
-                     * Factory to generate async task creators for interceptors.
-                     * The current fly instance will be locked when an async task be created.
-                     * Once locked, the incoming request will be added to a request queue, and the
-                     * async task will not been dequeue and performed until the fly instance is unlocked.
-                     *
-                     * @param [interceptor] either is interceptors.request or interceptors.response
-                     * @param [isResponseInterceptor] whether is interceptors.response or not
-                     * @returns {Function} async task creators
-                     */
-                    function wrap(interceptor, isResponseInterceptor) {
-                        /**
-                         * Submit async task for interceptors.
-                         * [promise] async task itself is a promise
-                         */
-                        return function (promise, lock) {
-                            // `this` either is interceptors.request or interceptors.response
-                            var _this = this;
-                            /**
-                             * [interceptor].p is a lock tag which actually is a Promise object.
-                             * The current fly instance will be locked when an async task be submit
-                             * in interceptors.
-                             */
-                            if (lock !== false) {
-                                _this.p = new Promise(function (resolve) {
-                                    function t() {
-                                        if (interceptor.p) {
-                                            if (isResponseInterceptor) {
-                                                if (interceptor.p !== _this.p) {
-                                                    _this.p = null;
-                                                    resolve();
-                                                } else {
-                                                    interceptor.p = _this.p = null;
-                                                    resolve();
-                                                }
-                                            } else {
-                                                interceptor.p.then(function () {
-                                                    _this.p = null;
-                                                    resolve();
-                                                });
-                                            }
-                                        } else {
-                                            resolve();
-                                            _this.p = null;
-                                        }
-                                    }
-
-                                    //promise.finally() may not be implemented in some Promise polyfill, so we don't use it at now.
-                                    promise.then(t, t);
-                                });
-                                if (isResponseInterceptor) {
-                                    //
-                                    if (!interceptor.p) {
-                                        interceptor.p = _this.p;
-                                    }
-                                }
-                            }
-                            if (!isResponseInterceptor) {
-                                fly.t = 1;
-                            }
-                            return promise;
-                        };
-                    }
-
-                    var interceptors = this.interceptors = {
-                        response: {
-                            use: function use(handler, onerror) {
-                                this.handler = handler;
-                                this.onerror = onerror;
-                            }
-                        },
-                        request: {
-                            use: function use(handler) {
-                                this.handler = handler;
-                            }
-                        }
-                    };
-
-                    var irq = interceptors.request;
-                    var irp = interceptors.response;
-                    // Generate async task creator for interceptor.
-                    irq.await = wrap(irp);
-                    irp.await = wrap(irq, 1);
-                    this.config = {
-                        method: "GET",
-                        baseURL: "",
-                        headers: {},
-                        timeout: 0,
-                        parseJson: true, // Convert response data to JSON object automatically.
-                        withCredentials: false
-                    };
-                }
-
-                _createClass(Fly, [{
-                    key: "request",
-                    value: function request(url, data, options) {
-                        var _this2 = this;
-
-                        var engine = new this.engine();
-                        var contentType = "Content-Type";
-                        var contentTypeLowerCase = contentType.toLowerCase();
-                        var interceptors = this.interceptors;
-                        var requestInterceptor = interceptors.request;
-                        var responseInterceptor = interceptors.response;
-                        var requestInterceptorHandler = requestInterceptor.handler;
-                        var promise = new Promise(function (resolve, reject) {
-                            if (utils.isObject(url)) {
-                                options = url;
-                                url = options.url;
-                            }
-                            options = options || {};
-                            options.headers = options.headers || {};
-
-                            function isPromise(p) {
-                                // some  polyfill implementation of Promise may be not standard,
-                                // so, we test by duck-typing
-                                return p.then && p.catch;
-                            }
-
-                            /**
-                             * If the current fly instance has been locked，the new request will enter the request queue
-                             * @param [promise] Once the current fly instance is unlocked, this promise will be resolved.
-                             *                  if the promise exist, indicate the current fly instance is locked.
-                             * @param [callback]
-                             */
-                            function enqueueIfLocked(promise, callback) {
-                                if (promise) {
-                                    promise.then(function () {
-                                        callback();
-                                    });
-                                } else {
-                                    callback();
-                                }
-                            }
-
-                            // make the http request
-                            function makeRequest(options) {
-                                data = options.body;
-                                // Normalize the request url
-                                url = utils.trim(options.url);
-                                var baseUrl = utils.trim(options.baseURL || "");
-                                if (!url && isBrowser && !baseUrl) url = location.href;
-                                if (url.indexOf("http") !== 0) {
-                                    var isAbsolute = url[0] === "/";
-                                    if (!baseUrl && isBrowser) {
-                                        var arr = location.pathname.split("/");
-                                        arr.pop();
-                                        baseUrl = location.protocol + "//" + location.host + (isAbsolute ? "" : arr.join("/"));
-                                    }
-                                    if (baseUrl[baseUrl.length - 1] !== "/") {
-                                        baseUrl += "/";
-                                    }
-                                    url = baseUrl + (isAbsolute ? url.substr(1) : url);
-                                    if (isBrowser) {
-
-                                        // Normalize the url which contains the ".." or ".", such as
-                                        // "http://xx.com/aa/bb/../../xx" to "http://xx.com/xx" .
-                                        var t = document.createElement("a");
-                                        t.href = url;
-                                        url = t.href;
-                                    }
-                                }
-
-                                var responseType = utils.trim(options.responseType || "");
-                                engine.withCredentials = !!options.withCredentials;
-                                var isGet = options.method === "GET";
-                                if (isGet) {
-                                    if (data) {
-                                        if (utils.type(data) !== "string") {
-                                            data = utils.formatParams(data);
-                                        }
-                                        url += (url.indexOf("?") === -1 ? "?" : "&") + data;
-                                    }
-                                }
-                                engine.open(options.method, url);
-
-                                // try catch for ie >=9
-                                try {
-                                    engine.timeout = options.timeout || 0;
-                                    if (responseType !== "stream") {
-                                        engine.responseType = responseType;
-                                    }
-                                } catch (e) {
-                                }
-
-                                // If the request data is json object, transforming it  to json string,
-                                // and set request content-type to "json". In browser,  the data will
-                                // be sent as RequestBody instead of FormData
-                                if (!utils.isFormData(data) && ["object", "array"].indexOf(utils.type(data)) !== -1) {
-                                    options.headers[contentType] = 'application/json;charset=utf-8';
-                                    data = JSON.stringify(data);
-                                }
-
-                                for (var k in options.headers) {
-                                    if (k === contentType && (utils.isFormData(data) || !data || isGet)) {
-                                        // Delete the content-type, Let the browser set it
-                                        delete options.headers[k];
-                                    } else {
-                                        try {
-                                            // In browser environment, some header fields are readonly,
-                                            // write will cause the exception .
-                                            engine.setRequestHeader(k, options.headers[k]);
-                                        } catch (e) {
-                                        }
-                                    }
-                                }
-
-                                function onresult(handler, data, type) {
-                                    enqueueIfLocked(responseInterceptor.p, function () {
-                                        if (handler) {
-                                            //如果失败，添加请求信息
-                                            if (type) {
-                                                data.request = options;
-                                            }
-                                            data = handler.call(responseInterceptor, data, Promise) || data;
-                                        }
-                                        if (!isPromise(data)) {
-                                            data = Promise[type === 0 ? "resolve" : "reject"](data);
-                                        }
-                                        data.then(function (d) {
-                                            resolve(d);
-                                        }).catch(function (e) {
-                                            reject(e);
-                                        });
-                                    });
-                                }
-
-                                function onerror(e) {
-                                    e.engine = engine;
-                                    onresult(responseInterceptor.onerror, e, -1);
-                                }
-
-                                function Err(msg, status) {
-                                    this.message = msg;
-                                    this.status = status;
-                                }
-
-                                engine.onload = function () {
-                                    // The xhr of IE9 has not response filed
-                                    var response = engine.response || engine.responseText;
-                                    if (options.parseJson && (engine.getResponseHeader(contentType) || "").indexOf("json") !== -1
-                                        // Some third engine implementation may transform the response text to json object automatically,
-                                    // so we should test the type of response before transforming it
-                                    && !utils.isObject(response)) {
-                                        response = JSON.parse(response);
-                                    }
-                                    var headers = {};
-                                    var items = (engine.getAllResponseHeaders() || "").split("\r\n");
-                                    items.pop();
-                                    items.forEach(function (e) {
-                                        var key = e.split(":")[0];
-                                        headers[key] = engine.getResponseHeader(key);
-                                    });
-                                    var status = engine.status;
-                                    var statusText = engine.statusText;
-                                    var data = {
-                                        data: response,
-                                        headers: headers,
-                                        status: status,
-                                        statusText: statusText
-                                    };
-                                    // The _response filed of engine is set in  adapter which be called in engine-wrapper.js
-                                    utils.merge(data, engine._response);
-                                    if (status >= 200 && status < 300 || status === 304) {
-                                        data.engine = engine;
-                                        data.request = options;
-                                        onresult(responseInterceptor.handler, data, 0);
-                                    } else {
-                                        var e = new Err(statusText, status);
-                                        e.response = data;
-                                        onerror(e);
-                                    }
-                                };
-
-                                engine.onerror = function (e) {
-                                    onerror(new Err(e.msg || "Network Error", 0));
-                                };
-
-                                engine.ontimeout = function () {
-                                    onerror(new Err("timeout [ " + engine.timeout + "ms ]", 1));
-                                };
-                                engine._options = options;
-                                setTimeout(function () {
-                                    engine.send(isGet ? null : data);
-                                }, 0);
-                            }
-
-                            enqueueIfLocked(requestInterceptor.p, function () {
-                                utils.merge(options, _this2.config);
-                                var headers = options.headers;
-                                headers[contentType] = headers[contentType] || headers[contentTypeLowerCase] || 'application/x-www-form-urlencoded';
-                                delete headers[contentTypeLowerCase];
-                                options.body = data || options.body;
-                                url = utils.trim(url || "");
-                                options.method = options.method.toUpperCase();
-                                options.url = url;
-                                if (requestInterceptorHandler) {
-                                    options = requestInterceptorHandler.call(requestInterceptor, options, Promise) || options;
-                                }
-                                var async = _this2.t;
-                                delete _this2.t;
-                                if (isPromise(options)) {
-                                    options.then(function (d) {
-                                        //support async  interceptors
-                                        if (async) {
-                                            makeRequest(d);
-                                        } else {
-                                            resolve(d);
-                                        }
-                                    }, function (err) {
-                                        reject(err);
-                                    });
-                                } else {
-                                    makeRequest(options);
-                                }
-                            });
-                        });
-                        promise.engine = engine;
-                        return promise;
-                    }
-                }, {
-                    key: "all",
-                    value: function all(promises) {
-                        return Promise.all(promises);
-                    }
-                }, {
-                    key: "spread",
-                    value: function spread(callback) {
-                        return function (arr) {
-                            return callback.apply(null, arr);
-                        };
-                    }
-                }]);
-
-                return Fly;
-            }();
-
-                    //For typeScript
-
-
-                    Fly.default = Fly;
-
-            ["get", "post", "put", "patch", "head", "delete"].forEach(function (e) {
-                Fly.prototype[e] = function (url, data, option) {
-                    return this.request(url, data, utils.merge({ method: e }, option));
-                };
-            });
-            // Learn more about keep-loader: https://github.com/wendux/keep-loader
-            ;
-            module.exports = Fly;
-
-            /***/
-        }]
-        /******/)
-    );
-});
-            /* WEBPACK VAR INJECTION */
-        }.call(exports, __webpack_require__(1)(module)))
-
-/***/ }),
-    /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function (module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function () {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
+        }
+        return a;
+    }
 };
 
 /***/ }),
-    /* 2 */
+/* 1 */,
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function KEEP(_,cb){cb();}
+"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var utils = __webpack_require__(0);
+var isBrowser = typeof document !== "undefined";
+
+var Fly = function () {
+    function Fly(engine) {
+        _classCallCheck(this, Fly);
+
+        this.engine = engine || XMLHttpRequest;
+
+        this.default = this; //For typeScript
+
+        /**
+         * Add  lock/unlock API for interceptor.
+         *
+         * Once an request/response interceptor is locked, the incoming request/response
+         * will be added to a queue before they enter the interceptor, they will not be
+         * continued  until the interceptor is unlocked.
+         *
+         * @param [interceptor] either is interceptors.request or interceptors.response
+         */
+        function wrap(interceptor) {
+            var resolve = void 0;
+            var reject = void 0;
+
+            function _clear() {
+                interceptor.p = resolve = reject = null;
+            }
+
+            utils.merge(interceptor, {
+                lock: function lock() {
+                    if (!resolve) {
+                        interceptor.p = new Promise(function (_resolve, _reject) {
+                            resolve = _resolve;
+                            reject = _reject;
+                        });
+                    }
+                },
+                unlock: function unlock() {
+                    if (resolve) {
+                        resolve();
+                        _clear();
+                    }
+                },
+                clear: function clear() {
+                    if (reject) {
+                        reject("cancel");
+                        _clear();
+                    }
+                }
+            });
+        }
+
+        var interceptors = this.interceptors = {
+            response: {
+                use: function use(handler, onerror) {
+                    this.handler = handler;
+                    this.onerror = onerror;
+                }
+            },
+            request: {
+                use: function use(handler) {
+                    this.handler = handler;
+                }
+            }
+        };
+
+        var irq = interceptors.request;
+        var irp = interceptors.response;
+        wrap(irp);
+        wrap(irq);
+
+        this.config = {
+            method: "GET",
+            baseURL: "",
+            headers: {},
+            timeout: 0,
+            params: {}, // Default Url params
+            parseJson: true, // Convert response data to JSON object automatically.
+            withCredentials: false
+        };
+    }
+
+    _createClass(Fly, [{
+        key: "request",
+        value: function request(url, data, options) {
+            var _this = this;
+
+            var engine = new this.engine();
+            var contentType = "Content-Type";
+            var contentTypeLowerCase = contentType.toLowerCase();
+            var interceptors = this.interceptors;
+            var requestInterceptor = interceptors.request;
+            var responseInterceptor = interceptors.response;
+            var requestInterceptorHandler = requestInterceptor.handler;
+            var promise = new Promise(function (resolve, reject) {
+                if (utils.isObject(url)) {
+                    options = url;
+                    url = options.url;
+                }
+                options = options || {};
+                options.headers = options.headers || {};
+
+                function isPromise(p) {
+                    // some  polyfill implementation of Promise may be not standard,
+                    // so, we test by duck-typing
+                    return p && p.then && p.catch;
+                }
+
+                /**
+                 * If the request/response interceptor has been locked，
+                 * the new request/response will enter a queue. otherwise, it will be performed directly.
+                 * @param [promise] if the promise exist, means the interceptor is  locked.
+                 * @param [callback]
+                 */
+                function enqueueIfLocked(promise, callback) {
+                    if (promise) {
+                        promise.then(function () {
+                            callback();
+                        });
+                    } else {
+                        callback();
+                    }
+                }
+
+                // make the http request
+                function makeRequest(options) {
+                    data = options.body;
+                    // Normalize the request url
+                    url = utils.trim(options.url);
+                    var baseUrl = utils.trim(options.baseURL || "");
+                    if (!url && isBrowser && !baseUrl) url = location.href;
+                    if (url.indexOf("http") !== 0) {
+                        var isAbsolute = url[0] === "/";
+                        if (!baseUrl && isBrowser) {
+                            var arr = location.pathname.split("/");
+                            arr.pop();
+                            baseUrl = location.protocol + "//" + location.host + (isAbsolute ? "" : arr.join("/"));
+                        }
+                        if (baseUrl[baseUrl.length - 1] !== "/") {
+                            baseUrl += "/";
+                        }
+                        url = baseUrl + (isAbsolute ? url.substr(1) : url);
+                        if (isBrowser) {
+
+                            // Normalize the url which contains the ".." or ".", such as
+                            // "http://xx.com/aa/bb/../../xx" to "http://xx.com/xx" .
+                            var t = document.createElement("a");
+                            t.href = url;
+                            url = t.href;
+                        }
+                    }
+
+                    var responseType = utils.trim(options.responseType || "");
+                    var needQuery = ["GET", "HEAD", "DELETE", "OPTION"].indexOf(options.method) !== -1;
+                    var dataType = utils.type(data);
+                    var params = options.params || {};
+
+                    // merge url params when the method is "GET" (data is object)
+                    if (needQuery && dataType === "object") {
+                        params = utils.merge(data, params);
+                    }
+                    // encode params to String
+                    params = utils.formatParams(params);
+
+                    // save url params
+                    var _params = [];
+                    if (params) {
+                        _params.push(params);
+                    }
+                    // Add data to url params when the method is "GET" (data is String)
+                    if (needQuery && data && dataType === "string") {
+                        _params.push(data);
+                    }
+
+                    // make the final url
+                    if (_params.length > 0) {
+                        url += (url.indexOf("?") === -1 ? "?" : "&") + _params.join("&");
+                    }
+
+                    engine.open(options.method, url);
+
+                    // try catch for ie >=9
+                    try {
+                        engine.withCredentials = !!options.withCredentials;
+                        engine.timeout = options.timeout || 0;
+                        if (responseType !== "stream") {
+                            engine.responseType = responseType;
+                        }
+                    } catch (e) {}
+
+                    var customContentType = options.headers[contentType] || options.headers[contentTypeLowerCase];
+
+                    // default content type
+                    var _contentType = "application/x-www-form-urlencoded";
+                    // If the request data is json object, transforming it  to json string,
+                    // and set request content-type to "json". In browser,  the data will
+                    // be sent as RequestBody instead of FormData
+                    if (utils.trim((customContentType || "").toLowerCase()) === _contentType) {
+                        data = utils.formatParams(data);
+                    } else if (!utils.isFormData(data) && ["object", "array"].indexOf(utils.type(data)) !== -1) {
+                        _contentType = 'application/json;charset=utf-8';
+                        data = JSON.stringify(data);
+                    }
+                    //If user doesn't set content-type, set default.
+                    if (!(customContentType || needQuery)) {
+                        options.headers[contentType] = _contentType;
+                    }
+
+                    for (var k in options.headers) {
+                        if (k === contentType && utils.isFormData(data)) {
+                            // Delete the content-type, Let the browser set it
+                            delete options.headers[k];
+                        } else {
+                            try {
+                                // In browser environment, some header fields are readonly,
+                                // write will cause the exception .
+                                engine.setRequestHeader(k, options.headers[k]);
+                            } catch (e) {}
+                        }
+                    }
+
+                    function onresult(handler, data, type) {
+                        enqueueIfLocked(responseInterceptor.p, function () {
+                            if (handler) {
+                                //如果失败，添加请求信息
+                                if (type) {
+                                    data.request = options;
+                                }
+                                var ret = handler.call(responseInterceptor, data, Promise);
+                                data = ret === undefined ? data : ret;
+                            }
+                            if (!isPromise(data)) {
+                                data = Promise[type === 0 ? "resolve" : "reject"](data);
+                            }
+                            data.then(function (d) {
+                                resolve(d);
+                            }).catch(function (e) {
+                                reject(e);
+                            });
+                        });
+                    }
+
+                    function onerror(e) {
+                        e.engine = engine;
+                        onresult(responseInterceptor.onerror, e, -1);
+                    }
+
+                    function Err(msg, status) {
+                        this.message = msg;
+                        this.status = status;
+                    }
+
+                    engine.onload = function () {
+                        try {
+                            // The xhr of IE9 has not response field
+                            var response = engine.response || engine.responseText;
+                            if (response && options.parseJson && (engine.getResponseHeader(contentType) || "").indexOf("json") !== -1
+                                // Some third engine implementation may transform the response text to json object automatically,
+                                // so we should test the type of response before transforming it
+                                && !utils.isObject(response)) {
+                                response = JSON.parse(response);
+                            }
+
+                            var headers = engine.responseHeaders;
+                            // In browser
+                            if (!headers) {
+                                headers = {};
+                                var items = (engine.getAllResponseHeaders() || "").split("\r\n");
+                                items.pop();
+                                items.forEach(function (e) {
+                                    if (!e) return;
+                                    var key = e.split(":")[0];
+                                    headers[key] = engine.getResponseHeader(key);
+                                });
+                            }
+                            var status = engine.status;
+                            var statusText = engine.statusText;
+                            var _data = {data: response, headers: headers, status: status, statusText: statusText};
+                            // The _response filed of engine is set in  adapter which be called in engine-wrapper.js
+                            utils.merge(_data, engine._response);
+                            if (status >= 200 && status < 300 || status === 304) {
+                                _data.engine = engine;
+                                _data.request = options;
+                                onresult(responseInterceptor.handler, _data, 0);
+                            } else {
+                                var e = new Err(statusText, status);
+                                e.response = _data;
+                                onerror(e);
+                            }
+                        } catch (e) {
+                            onerror(new Err(e.msg, engine.status));
+                        }
+                    };
+
+                    engine.onerror = function (e) {
+                        onerror(new Err(e.msg || "Network Error", 0));
+                    };
+
+                    engine.ontimeout = function () {
+                        onerror(new Err("timeout [ " + engine.timeout + "ms ]", 1));
+                    };
+                    engine._options = options;
+                    setTimeout(function () {
+                        engine.send(needQuery ? null : data);
+                    }, 0);
+                }
+
+                enqueueIfLocked(requestInterceptor.p, function () {
+                    utils.merge(options, JSON.parse(JSON.stringify(_this.config)));
+                    var headers = options.headers;
+                    headers[contentType] = headers[contentType] || headers[contentTypeLowerCase] || "";
+                    delete headers[contentTypeLowerCase];
+                    options.body = data || options.body;
+                    url = utils.trim(url || "");
+                    options.method = options.method.toUpperCase();
+                    options.url = url;
+                    var ret = options;
+                    if (requestInterceptorHandler) {
+                        ret = requestInterceptorHandler.call(requestInterceptor, options, Promise) || options;
+                    }
+                    if (!isPromise(ret)) {
+                        ret = Promise.resolve(ret);
+                    }
+                    ret.then(function (d) {
+                        //if options continue
+                        if (d === options) {
+                            makeRequest(d);
+                        } else {
+                            resolve(d);
+                        }
+                    }, function (err) {
+                        reject(err);
+                    });
+                });
+            });
+            promise.engine = engine;
+            return promise;
+        }
+    }, {
+        key: "all",
+        value: function all(promises) {
+            return Promise.all(promises);
+        }
+    }, {
+        key: "spread",
+        value: function spread(callback) {
+            return function (arr) {
+                return callback.apply(null, arr);
+            };
+        }
+    }]);
+
+    return Fly;
+}();
+
+//For typeScript
+
+
+Fly.default = Fly;
+
+["get", "post", "put", "patch", "head", "delete"].forEach(function (e) {
+    Fly.prototype[e] = function (url, data, option) {
+        return this.request(url, data, utils.merge({ method: e }, option));
+    };
+});
+        ["lock", "unlock", "clear"].forEach(function (e) {
+            Fly.prototype[e] = function () {
+                this.interceptors.request[e]();
+            };
+        });
+// Learn more about keep-loader: https://github.com/wendux/keep-loader
+;
+module.exports = Fly;
+
+/***/ })
+/******/ ]);
+});
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -665,36 +631,35 @@ var percentTwenties = /%20/g;
 module.exports = {
     'default': 'RFC3986',
     formatters: {
-        RFC1738: function RFC1738(value) {
+        RFC1738: function (value) {
             return replace.call(value, percentTwenties, '+');
         },
-        RFC3986: function RFC3986(value) {
-            return value;
+        RFC3986: function (value) {
+            return String(value);
         }
     },
     RFC1738: 'RFC1738',
     RFC3986: 'RFC3986'
 };
 
+
 /***/ }),
-    /* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var has = Object.prototype.hasOwnProperty;
 
-var hexTable = function () {
+var hexTable = (function () {
     var array = [];
     for (var i = 0; i < 256; ++i) {
         array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
     }
 
     return array;
-}();
+}());
 
 var compactQueue = function compactQueue(queue) {
     var obj;
@@ -719,7 +684,7 @@ var compactQueue = function compactQueue(queue) {
     return obj;
 };
 
-exports.arrayToObject = function arrayToObject(source, options) {
+var arrayToObject = function arrayToObject(source, options) {
     var obj = options && options.plainObjects ? Object.create(null) : {};
     for (var i = 0; i < source.length; ++i) {
         if (typeof source[i] !== 'undefined') {
@@ -730,16 +695,16 @@ exports.arrayToObject = function arrayToObject(source, options) {
     return obj;
 };
 
-exports.merge = function merge(target, source, options) {
+var merge = function merge(target, source, options) {
     if (!source) {
         return target;
     }
 
-    if ((typeof source === 'undefined' ? 'undefined' : _typeof(source)) !== 'object') {
+    if (typeof source !== 'object') {
         if (Array.isArray(target)) {
             target.push(source);
-        } else if ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object') {
-            if (options.plainObjects || options.allowPrototypes || !has.call(Object.prototype, source)) {
+        } else if (target && typeof target === 'object') {
+            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
                 target[source] = true;
             }
         } else {
@@ -749,20 +714,21 @@ exports.merge = function merge(target, source, options) {
         return target;
     }
 
-    if ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) !== 'object') {
+    if (!target || typeof target !== 'object') {
         return [target].concat(source);
     }
 
     var mergeTarget = target;
     if (Array.isArray(target) && !Array.isArray(source)) {
-        mergeTarget = exports.arrayToObject(target, options);
+        mergeTarget = arrayToObject(target, options);
     }
 
     if (Array.isArray(target) && Array.isArray(source)) {
         source.forEach(function (item, i) {
             if (has.call(target, i)) {
-                if (target[i] && _typeof(target[i]) === 'object') {
-                    target[i] = exports.merge(target[i], item, options);
+                var targetItem = target[i];
+                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
+                    target[i] = merge(targetItem, item, options);
                 } else {
                     target.push(item);
                 }
@@ -777,7 +743,7 @@ exports.merge = function merge(target, source, options) {
         var value = source[key];
 
         if (has.call(acc, key)) {
-            acc[key] = exports.merge(acc[key], value, options);
+            acc[key] = merge(acc[key], value, options);
         } else {
             acc[key] = value;
         }
@@ -785,14 +751,14 @@ exports.merge = function merge(target, source, options) {
     }, mergeTarget);
 };
 
-exports.assign = function assignSingleSource(target, source) {
+var assign = function assignSingleSource(target, source) {
     return Object.keys(source).reduce(function (acc, key) {
         acc[key] = source[key];
         return acc;
     }, target);
 };
 
-exports.decode = function (str) {
+var decode = function (str) {
     try {
         return decodeURIComponent(str.replace(/\+/g, ' '));
     } catch (e) {
@@ -800,7 +766,7 @@ exports.decode = function (str) {
     }
 };
 
-exports.encode = function encode(str) {
+var encode = function encode(str) {
     // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
     // It has been adapted here for stricter adherence to RFC 3986
     if (str.length === 0) {
@@ -813,17 +779,18 @@ exports.encode = function encode(str) {
     for (var i = 0; i < string.length; ++i) {
         var c = string.charCodeAt(i);
 
-        if (c === 0x2D // -
-        || c === 0x2E // .
-        || c === 0x5F // _
-        || c === 0x7E // ~
-        || c >= 0x30 && c <= 0x39 // 0-9
-        || c >= 0x41 && c <= 0x5A // a-z
-        || c >= 0x61 && c <= 0x7A // A-Z
+        if (
+            c === 0x2D // -
+            || c === 0x2E // .
+            || c === 0x5F // _
+            || c === 0x7E // ~
+            || (c >= 0x30 && c <= 0x39) // 0-9
+            || (c >= 0x41 && c <= 0x5A) // a-z
+            || (c >= 0x61 && c <= 0x7A) // A-Z
         ) {
-                out += string.charAt(i);
-                continue;
-            }
+            out += string.charAt(i);
+            continue;
+        }
 
         if (c < 0x80) {
             out = out + hexTable[c];
@@ -831,24 +798,28 @@ exports.encode = function encode(str) {
         }
 
         if (c < 0x800) {
-            out = out + (hexTable[0xC0 | c >> 6] + hexTable[0x80 | c & 0x3F]);
+            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
             continue;
         }
 
         if (c < 0xD800 || c >= 0xE000) {
-            out = out + (hexTable[0xE0 | c >> 12] + hexTable[0x80 | c >> 6 & 0x3F] + hexTable[0x80 | c & 0x3F]);
+            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
             continue;
         }
 
         i += 1;
-        c = 0x10000 + ((c & 0x3FF) << 10 | string.charCodeAt(i) & 0x3FF);
-        out += hexTable[0xF0 | c >> 18] + hexTable[0x80 | c >> 12 & 0x3F] + hexTable[0x80 | c >> 6 & 0x3F] + hexTable[0x80 | c & 0x3F];
+        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
+        /* eslint operator-linebreak: [2, "before"] */
+        out += hexTable[0xF0 | (c >> 18)]
+            + hexTable[0x80 | ((c >> 12) & 0x3F)]
+            + hexTable[0x80 | ((c >> 6) & 0x3F)]
+            + hexTable[0x80 | (c & 0x3F)];
     }
 
     return out;
 };
 
-exports.compact = function compact(value) {
+var compact = function compact(value) {
     var queue = [{ obj: { o: value }, prop: 'o' }];
     var refs = [];
 
@@ -860,7 +831,7 @@ exports.compact = function compact(value) {
         for (var j = 0; j < keys.length; ++j) {
             var key = keys[j];
             var val = obj[key];
-            if ((typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val !== null && refs.indexOf(val) === -1) {
+            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
                 queue.push({ obj: obj, prop: key });
                 refs.push(val);
             }
@@ -870,11 +841,11 @@ exports.compact = function compact(value) {
     return compactQueue(queue);
 };
 
-exports.isRegExp = function isRegExp(obj) {
+var isRegExp = function isRegExp(obj) {
     return Object.prototype.toString.call(obj) === '[object RegExp]';
 };
 
-exports.isBuffer = function isBuffer(obj) {
+var isBuffer = function isBuffer(obj) {
     if (obj === null || typeof obj === 'undefined') {
         return false;
     }
@@ -882,29 +853,40 @@ exports.isBuffer = function isBuffer(obj) {
     return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
 };
 
-        /***/
-    }),
-    /* 4 */
-    /***/ (function (module, exports, __webpack_require__) {
+module.exports = {
+    arrayToObject: arrayToObject,
+    assign: assign,
+    compact: compact,
+    decode: decode,
+    encode: encode,
+    isBuffer: isBuffer,
+    isRegExp: isRegExp,
+    merge: merge
+};
 
-        "use strict";
 
-
-//For browser entry
-        var Fly = __webpack_require__(0);
-        var fly = new Fly();
-        module.exports = fly;
-
-        /***/ }),
-/* 5 */
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var stringify = __webpack_require__(9);
-var parse = __webpack_require__(8);
-        var formats = __webpack_require__(2);
+//For browser entry
+var Fly = __webpack_require__(0);
+var fly = new Fly();
+module.exports = fly;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stringify = __webpack_require__(8);
+var parse = __webpack_require__(7);
+var formats = __webpack_require__(1);
 
 module.exports = {
     formats: formats,
@@ -912,60 +894,55 @@ module.exports = {
     stringify: stringify
 };
 
+
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-        var _index = __webpack_require__(4);
-
-        var _index2 = _interopRequireDefault(_index);
-
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {default: obj};
-        }
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index__);
 /**
  * Created by du on 16/12/10.
  */
 //var fly = require("../index")
-var qs = __webpack_require__(5);
 
-        _index2.default.get("../package.json", {aa: 8, bb: 9, tt: {xx: 5}}).then(function (d) {
-    console.log("get result:", d);
-}).catch(function (e) {
-    return console.log("error", e);
-});
+var qs = __webpack_require__(4);
 
-        _index2.default.post("../package.json", {aa: 8, bb: 9, tt: {xx: 5}}).then(function (d) {
-    console.log("post result:", d);
-}).catch(function (e) {
-    return console.log("error", e);
-});
+__WEBPACK_IMPORTED_MODULE_0__index___default.a.get("../package.json", {aa: 8, bb: 9, tt: {xx: 5}}).then((d) => {
+    console.log("get result:", d)
+}).catch((e) => console.log("error", e))
 
-        _index2.default.request("../package.json", {hh: 5}, {
+__WEBPACK_IMPORTED_MODULE_0__index___default.a.post("../package.json", {aa: 8, bb: 9, tt: {xx: 5}}).then((d) => {
+    console.log("post result:", d)
+}).catch((e) => console.log("error", e))
+
+__WEBPACK_IMPORTED_MODULE_0__index___default.a.request("../package.json", {hh: 5}, {
     method: "post"
-}).then(function (d) {
-    console.log("ajax result:", d);
-});
+}).then(d => {
+    console.log("ajax result:", d)
+})
+
 
 //send data in the application/x-www-form-urlencoded format
-        _index2.default.get("", qs.stringify({aa: 8, bb: 9, tt: {xx: 5}})).then(function (d) {
-        });
-        _index2.default.post("../package.json", qs.stringify({aa: 8, bb: 9, tt: {xx: 5}})).then(function (d) {
-        });
+__WEBPACK_IMPORTED_MODULE_0__index___default.a.get("",qs.stringify({aa: 8, bb: 9, tt: {xx: 5}})).then((d)=>{
+
+})
+__WEBPACK_IMPORTED_MODULE_0__index___default.a.post("../package.json", qs.stringify({aa: 8, bb: 9, tt: {xx: 5}})).then((d) => {
+
+})
+
 
 /***/ }),
-/* 7 */,
-/* 8 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-        var utils = __webpack_require__(3);
+var utils = __webpack_require__(2);
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -1011,24 +988,31 @@ var parseValues = function parseQueryStringValues(str, options) {
     return obj;
 };
 
-var parseObject = function parseObject(chain, val, options) {
+var parseObject = function (chain, val, options) {
     var leaf = val;
 
     for (var i = chain.length - 1; i >= 0; --i) {
         var obj;
         var root = chain[i];
 
-        if (root === '[]') {
-            obj = [];
-            obj = obj.concat(leaf);
+        if (root === '[]' && options.parseArrays) {
+            obj = [].concat(leaf);
         } else {
             obj = options.plainObjects ? Object.create(null) : {};
             var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
             var index = parseInt(cleanRoot, 10);
-            if (!isNaN(index) && root !== cleanRoot && String(index) === cleanRoot && index >= 0 && options.parseArrays && index <= options.arrayLimit) {
+            if (!options.parseArrays && cleanRoot === '') {
+                obj = { 0: leaf };
+            } else if (
+                !isNaN(index)
+                && root !== cleanRoot
+                && String(index) === cleanRoot
+                && index >= 0
+                && (options.parseArrays && index <= options.arrayLimit)
+            ) {
                 obj = [];
                 obj[index] = leaf;
-            } else {
+            } else if (cleanRoot !== '__proto__') {
                 obj[cleanRoot] = leaf;
             }
         }
@@ -1132,31 +1116,33 @@ module.exports = function (str, opts) {
     return utils.compact(obj);
 };
 
+
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-        var utils = __webpack_require__(3);
-        var formats = __webpack_require__(2);
+var utils = __webpack_require__(2);
+var formats = __webpack_require__(1);
 
 var arrayPrefixGenerators = {
     brackets: function brackets(prefix) {
-        // eslint-disable-line func-name-matching
         return prefix + '[]';
     },
     indices: function indices(prefix, key) {
-        // eslint-disable-line func-name-matching
         return prefix + '[' + key + ']';
     },
     repeat: function repeat(prefix) {
-        // eslint-disable-line func-name-matching
         return prefix;
     }
+};
+
+var isArray = Array.isArray;
+var push = Array.prototype.push;
+var pushToArray = function (arr, valueOrArray) {
+    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
 };
 
 var toISO = Date.prototype.toISOString;
@@ -1167,21 +1153,34 @@ var defaults = {
     encoder: utils.encode,
     encodeValuesOnly: false,
     serializeDate: function serializeDate(date) {
-        // eslint-disable-line func-name-matching
         return toISO.call(date);
     },
     skipNulls: false,
     strictNullHandling: false
 };
 
-var stringify = function stringify( // eslint-disable-line func-name-matching
-object, prefix, generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots, serializeDate, formatter, encodeValuesOnly) {
+var stringify = function stringify(
+    object,
+    prefix,
+    generateArrayPrefix,
+    strictNullHandling,
+    skipNulls,
+    encoder,
+    filter,
+    sort,
+    allowDots,
+    serializeDate,
+    formatter,
+    encodeValuesOnly
+) {
     var obj = object;
     if (typeof filter === 'function') {
         obj = filter(prefix, obj);
     } else if (obj instanceof Date) {
         obj = serializeDate(obj);
-    } else if (obj === null) {
+    }
+
+    if (obj === null) {
         if (strictNullHandling) {
             return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder) : prefix;
         }
@@ -1204,7 +1203,7 @@ object, prefix, generateArrayPrefix, strictNullHandling, skipNulls, encoder, fil
     }
 
     var objKeys;
-    if (Array.isArray(filter)) {
+    if (isArray(filter)) {
         objKeys = filter;
     } else {
         var keys = Object.keys(obj);
@@ -1218,10 +1217,36 @@ object, prefix, generateArrayPrefix, strictNullHandling, skipNulls, encoder, fil
             continue;
         }
 
-        if (Array.isArray(obj)) {
-            values = values.concat(stringify(obj[key], generateArrayPrefix(prefix, key), generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots, serializeDate, formatter, encodeValuesOnly));
+        if (isArray(obj)) {
+            pushToArray(values, stringify(
+                obj[key],
+                generateArrayPrefix(prefix, key),
+                generateArrayPrefix,
+                strictNullHandling,
+                skipNulls,
+                encoder,
+                filter,
+                sort,
+                allowDots,
+                serializeDate,
+                formatter,
+                encodeValuesOnly
+            ));
         } else {
-            values = values.concat(stringify(obj[key], prefix + (allowDots ? '.' + key : '[' + key + ']'), generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots, serializeDate, formatter, encodeValuesOnly));
+            pushToArray(values, stringify(
+                obj[key],
+                prefix + (allowDots ? '.' + key : '[' + key + ']'),
+                generateArrayPrefix,
+                strictNullHandling,
+                skipNulls,
+                encoder,
+                filter,
+                sort,
+                allowDots,
+                serializeDate,
+                formatter,
+                encodeValuesOnly
+            ));
         }
     }
 
@@ -1232,7 +1257,7 @@ module.exports = function (object, opts) {
     var obj = object;
     var options = opts ? utils.assign({}, opts) : {};
 
-    if (options.encoder !== null && options.encoder !== undefined && typeof options.encoder !== 'function') {
+    if (options.encoder !== null && typeof options.encoder !== 'undefined' && typeof options.encoder !== 'function') {
         throw new TypeError('Encoder has to be a function.');
     }
 
@@ -1257,14 +1282,14 @@ module.exports = function (object, opts) {
     if (typeof options.filter === 'function') {
         filter = options.filter;
         obj = filter('', obj);
-    } else if (Array.isArray(options.filter)) {
+    } else if (isArray(options.filter)) {
         filter = options.filter;
         objKeys = filter;
     }
 
     var keys = [];
 
-    if ((typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) !== 'object' || obj === null) {
+    if (typeof obj !== 'object' || obj === null) {
         return '';
     }
 
@@ -1293,8 +1318,20 @@ module.exports = function (object, opts) {
         if (skipNulls && obj[key] === null) {
             continue;
         }
-
-        keys = keys.concat(stringify(obj[key], key, generateArrayPrefix, strictNullHandling, skipNulls, encode ? encoder : null, filter, sort, allowDots, serializeDate, formatter, encodeValuesOnly));
+        pushToArray(keys, stringify(
+            obj[key],
+            key,
+            generateArrayPrefix,
+            strictNullHandling,
+            skipNulls,
+            encode ? encoder : null,
+            filter,
+            sort,
+            allowDots,
+            serializeDate,
+            formatter,
+            encodeValuesOnly
+        ));
     }
 
     var joined = keys.join(delimiter);
@@ -1302,6 +1339,7 @@ module.exports = function (object, opts) {
 
     return joined.length > 0 ? prefix + joined : '';
 };
+
 
 /***/ })
 /******/ ]);

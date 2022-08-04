@@ -1,78 +1,5 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
-
 (function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
+	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
@@ -146,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -229,7 +156,205 @@ module.exports = {
 };
 
 /***/ }),
-/* 1 */,
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+function KEEP(_,cb){cb();}
+"use strict";
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*
+ * author: wendu
+ * email: 824783146@qq.com
+ **/
+
+var util = __webpack_require__(0);
+var isBrowser = typeof document !== "undefined";
+
+//EngineWrapper can help  generating  a  http engine quickly through a adapter
+function EngineWrapper(adapter) {
+    var AjaxEngine = function () {
+        function AjaxEngine() {
+            _classCallCheck(this, AjaxEngine);
+
+            this.requestHeaders = {};
+            this.readyState = 0;
+            this.timeout = 0; // 0 stands for no timeout
+            this.responseURL = "";
+            this.responseHeaders = {};
+        }
+
+        _createClass(AjaxEngine, [{
+            key: "_call",
+            value: function _call(name) {
+                this[name] && this[name].apply(this, [].splice.call(arguments, 1));
+            }
+        }, {
+            key: "_changeReadyState",
+            value: function _changeReadyState(state) {
+                this.readyState = state;
+                this._call("onreadystatechange");
+            }
+        }, {
+            key: "open",
+            value: function open(method, url) {
+                this.method = method;
+                if (!url) {
+                    url = location.href;
+                } else {
+                    url = util.trim(url);
+                    if (url.indexOf("http") !== 0) {
+                        // Normalize the request url
+                        if (isBrowser) {
+                            var t = document.createElement("a");
+                            t.href = url;
+                            url = t.href;
+                        }
+                    }
+                }
+                this.responseURL = url;
+                this._changeReadyState(1);
+            }
+        }, {
+            key: "send",
+            value: function send(arg) {
+                var _this = this;
+
+                arg = arg || null;
+                var self = this;
+                if (adapter) {
+                    var request = {
+                        method: self.method,
+                        url: self.responseURL,
+                        headers: self.requestHeaders || {},
+                        body: arg
+                    };
+                    util.merge(request, self._options || {});
+                    if (request.method === "GET") {
+                        request.body = null;
+                    }
+                    self._changeReadyState(3);
+                    var timer = void 0;
+                    self.timeout = self.timeout || 0;
+                    if (self.timeout > 0) {
+                        timer = setTimeout(function () {
+                            if (self.readyState === 3) {
+                                _this._call("onloadend");
+                                self._changeReadyState(0);
+                                self._call("ontimeout");
+                            }
+                        }, self.timeout);
+                    }
+                    request.timeout = self.timeout;
+                    adapter(request, function (response) {
+
+                        function getAndDelete(key) {
+                            var t = response[key];
+                            delete response[key];
+                            return t;
+                        }
+
+                        // If the request has already timeout, return
+                        if (self.readyState !== 3) return;
+                        clearTimeout(timer);
+
+                        // Make sure the type of status is integer
+                        self.status = getAndDelete("statusCode") - 0;
+
+                        var responseText = getAndDelete("responseText");
+                        var statusMessage = getAndDelete("statusMessage");
+
+                        // Network error, set the status code 0
+                        if (!self.status) {
+                            self.statusText = responseText;
+                            self._call("onerror", { msg: statusMessage });
+                        } else {
+                            // Parsing the response headers to array in a object,  because
+                            // there may be multiple values with the same header name
+                            var responseHeaders = getAndDelete("headers");
+                            var headers = {};
+                            for (var field in responseHeaders) {
+                                var value = responseHeaders[field];
+                                var key = field.toLowerCase();
+                                // Is array
+                                if ((typeof value === "undefined" ? "undefined" : _typeof(value)) === "object") {
+                                    headers[key] = value;
+                                } else {
+                                    headers[key] = headers[key] || [];
+                                    headers[key].push(value);
+                                }
+                            }
+                            var cookies = headers["set-cookie"];
+                            if (isBrowser && cookies) {
+                                cookies.forEach(function (e) {
+                                    // Remove the http-Only property of the  cookie
+                                    // so that JavaScript can operate it.
+                                    document.cookie = e.replace(/;\s*httpOnly/ig, "");
+                                });
+                            }
+                            self.responseHeaders = headers;
+                            // Set the fields of engine from response
+                            self.statusText = statusMessage || "";
+                            self.response = self.responseText = responseText;
+                            self._response = response;
+                            self._changeReadyState(4);
+                            self._call("onload");
+                        }
+                        self._call("onloadend");
+                    });
+                } else {
+                    console.error("Ajax require adapter");
+                }
+            }
+        }, {
+            key: "setRequestHeader",
+            value: function setRequestHeader(key, value) {
+                this.requestHeaders[util.trim(key)] = value;
+            }
+        }, {
+            key: "getResponseHeader",
+            value: function getResponseHeader(key) {
+                return (this.responseHeaders[key.toLowerCase()] || "").toString() || null;
+            }
+        }, {
+            key: "getAllResponseHeaders",
+            value: function getAllResponseHeaders() {
+                var str = "";
+                for (var key in this.responseHeaders) {
+                    str += key + ":" + this.getResponseHeader(key) + "\r\n";
+                }
+                return str || null;
+            }
+        }, {
+            key: "abort",
+            value: function abort(msg) {
+                this._changeReadyState(0);
+                this._call("onerror", { msg: msg });
+                this._call("onloadend");
+            }
+        }], [{
+            key: "setAdapter",
+            value: function setAdapter(requestAdapter) {
+                adapter = requestAdapter;
+            }
+        }]);
+
+        return AjaxEngine;
+    }();
+
+    return AjaxEngine;
+}
+
+// learn more about keep-loader: https://github.com/wendux/keep-loader
+;
+module.exports = EngineWrapper;
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -497,9 +622,9 @@ var Fly = function () {
                             // The xhr of IE9 has not response field
                             var response = engine.response || engine.responseText;
                             if (response && options.parseJson && (engine.getResponseHeader(contentType) || "").indexOf("json") !== -1
-                                // Some third engine implementation may transform the response text to json object automatically,
-                                // so we should test the type of response before transforming it
-                                && !utils.isObject(response)) {
+                            // Some third engine implementation may transform the response text to json object automatically,
+                            // so we should test the type of response before transforming it
+                            && !utils.isObject(response)) {
                                 response = JSON.parse(response);
                             }
 
@@ -517,7 +642,7 @@ var Fly = function () {
                             }
                             var status = engine.status;
                             var statusText = engine.statusText;
-                            var _data = {data: response, headers: headers, status: status, statusText: statusText};
+                            var _data = { data: response, headers: headers, status: status, statusText: statusText };
                             // The _response filed of engine is set in  adapter which be called in engine-wrapper.js
                             utils.merge(_data, engine._response);
                             if (status >= 200 && status < 300 || status === 304) {
@@ -605,46 +730,74 @@ Fly.default = Fly;
         return this.request(url, data, utils.merge({ method: e }, option));
     };
 });
-        ["lock", "unlock", "clear"].forEach(function (e) {
-            Fly.prototype[e] = function () {
-                this.interceptors.request[e]();
-            };
-        });
+["lock", "unlock", "clear"].forEach(function (e) {
+    Fly.prototype[e] = function () {
+        this.interceptors.request[e]();
+    };
+});
 // Learn more about keep-loader: https://github.com/wendux/keep-loader
 ;
 module.exports = Fly;
 
-/***/ })
-/******/ ]);
-});
-
-
 /***/ }),
-
-/***/ 6:
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-const fly_1 = __webpack_require__(0);
-var fly = new fly_1.default;
-var log = console.log;
-fly.config.headers = { xx: 6 };
-fly.interceptors.request.use(function (config) {
-    config.headers['X-Requested-With'] = "XMLHttpRequest";
-    config.headers['apiVersion'] = '1.0';
-    log("request config", config);
-    config["xx"] = 9; //custom option
-});
-fly.interceptors.response.use(function (response) {
-    return response.data;
-}, function (err) {
-    log(err);
-});
-fly.get("").then(d => console.log("success", d));
 
+//百度小程序适配器
+module.exports = function (request, responseCallback) {
+    var con = {
+        method: request.method,
+        url: request.url,
+        dataType: request.dataType || undefined,
+        header: request.headers,
+        data: request.body || {},
+        responseType: request.responseType || 'text',
+        success: function success(res) {
+            responseCallback({
+                statusCode: res.statusCode,
+                responseText: res.data,
+                headers: res.header,
+                statusMessage: res.errMsg
+            });
+        },
+        fail: function fail(res) {
+            responseCallback({
+                statusCode: res.statusCode || 0,
+                statusMessage: res.errMsg
+            });
+        }
+    };
+    swan.request(con);
+};
+
+/***/ }),
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+//百度小程序入口
+var _Fly = __webpack_require__(2);
+var EngineWrapper = __webpack_require__(1);
+var adapter = __webpack_require__(6);
+var wxEngine = EngineWrapper(adapter);
+module.exports = function (engine) {
+    return new _Fly(engine || wxEngine);
+};
 
 /***/ })
-
-/******/ });
+/******/ ]);
+});
